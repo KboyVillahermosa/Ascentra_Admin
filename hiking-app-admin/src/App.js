@@ -9,6 +9,9 @@ import './App.css';
 import Dashboard from './components/dashboard/Dashboard';
 import UserManagement from './components/users/UserManagement';
 import TrailManagement from './components/trails/TrailManagement';
+import SocialMediaManagement from './components/social/SocialMediaManagement';
+import ActivityManagement from './components/activities/ActivityManagement';
+import HikeHistory from './components/activities/HikeHistory'; // Import the new component
 import Login from './components/auth/Login';
 import ProtectedRoute from './components/common/ProtectedRoute';
 
@@ -37,7 +40,28 @@ function App() {
           </ProtectedRoute>
         } />
         
+        <Route path="/social" element={
+          <ProtectedRoute>
+            <SocialMediaManagement />
+          </ProtectedRoute>
+        } />
+        
+        <Route path="/activities" element={
+          <ProtectedRoute>
+            <ActivityManagement />
+          </ProtectedRoute>
+        } />
+        
+        <Route path="/hike-history" element={
+          <ProtectedRoute>
+            <HikeHistory />
+          </ProtectedRoute>
+        } />
+        
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        
+        {/* Catch-all route for 404 handling */}
+        <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </Router>
   );
