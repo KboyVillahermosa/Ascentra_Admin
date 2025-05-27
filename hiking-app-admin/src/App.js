@@ -14,6 +14,7 @@ import ActivityManagement from './components/activities/ActivityManagement';
 import HikeHistory from './components/activities/HikeHistory'; // Import the new component
 import Login from './components/auth/Login';
 import ProtectedRoute from './components/common/ProtectedRoute';
+import ForumAdmin from './pages/ForumAdmin';
 
 function App() {
   return (
@@ -57,6 +58,8 @@ function App() {
             <HikeHistory />
           </ProtectedRoute>
         } />
+        
+        <Route path="/forum-admin" element={<ForumAdmin />} />
         
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
         

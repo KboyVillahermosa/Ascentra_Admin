@@ -26,7 +26,6 @@ const ActivitySummary = () => {
       // Example processing - group by month
       try {
         // This is a simplified example
-        // You would implement actual processing based on your data structure
         return data;
       } catch (error) {
         console.error("Error processing chart data:", error);
